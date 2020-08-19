@@ -1,56 +1,163 @@
 <!DOCTYPE>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Al Tiron</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     </head>
     <body>
-        <ul>
-            <li><a href="#">Gira</a></li>
-            <li><a href="#">Miembros</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-        <h1> Jumbotron Al Tiron </h1>
-        <h2>Biografía</h2>
-        <p>Biografía de la banda, sus inicios, como empezaron...</p>
-        <h1>Aquí va la galería de imagenes</h1>
-        <h1>IMAGENES DEL GRUPO</h1>
+       
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" width="40" height="40" alt="" loading="lazy">
+            </a>
+            <a class="navbar-brand" href="#">Al Tirón</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Gira <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Miembros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Discografía</a>
+                </li>
+                </ul>
+            </div>
+        </nav>
+       
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Al Tirón</h1>
+                <p class="lead">Sueños de Libertad</p>
+            </div>
+        </div>  
+        <div class="container">
+            <div class="row">
+	            <div class="col-sm-10">
+	                <div class="card" style="width: 60rem;">
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/all.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Biografía</h5>
+                                <p class="card-text">AL TIRÓN es un grupo formado en Toledo, por músicos de varias bandas de la zona.</p>
+                                <p>Graban una pequeña maqueta compuesta de 3 canciones grabadas por Ferdy (Atrankas, Kabalah) con 200 copias vendidas.</p>
+                                <p>Por motivos laborales Rubén y Jimmy dejan la banda incorporandose asi David y Luisfer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        
+       
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="img/grupo.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="img/pacto.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="img/lui.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="img/kami.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="img/julio.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="img/david.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
 
         <h2>Conciertos:</h2>
-          <table>
-            <tr>
-                <th>Fecha</th>
-                <th>Sala</th>
-                <th>Ciudad</th>
-                <th>Hora</th>
-            </tr>
-            <tr>
-                <td>18/08/2020</td>
-                <td>Detonante</td>
-                <td>Santa Maria de benquerencia (Toledo)</td>
-                <td>9:00</td>
-            </tr>
-            <tr>
-                <td>18/08/2020</td>
-                <td>Detonante</td>
-                <td>Santa Maria de benquerencia (Toledo)</td>
-                <td>9:00</td>
-            </tr>
-            <tr>
-                <td>18/08/2020</td>
-                <td>Detonante</td>
-                <td>Santa Maria de benquerencia (Toledo)</td>
-                <td>9:00</td>
-            </tr>
-        </table>
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Sala</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">18/08/2020</th>
+                        <td>Detonante</td>
+                        <td>Santa Maria de benquerencia (Toledo)</td>
+                        <td>9:00</td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="row">18/08/2020</th>
+                        <td>Detonante</td>
+                        <td>Santa Maria de benquerencia (Toledo)</td>
+                        <td>9:00</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">18/08/2020</th>
+                        <td>Detonante</td>
+                        <td>Santa Maria de benquerencia (Toledo)</td>
+                        <td>9:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <footer>
-            <h2>Búscanos en redes sociales</h2>
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Youtube</a></li>
-            </ul>
-        </footer>
+		<div id="contacto">
+			<ul>
+				<li><h3>Contacto:</h3></li>
+				<li>Teléfono: </li>
+				<li>Dirección: </li>
+				<li>Correo Electrónico: altironrock@hotmail.com</li>
+				<li>horario:  Lu — Vi: 8:00 — 18:00</li>
+			</ul>
+		</div>
+
+
+		<div id="redes">
+			<ul>
+				<li><h3>En las redes:</h3></li>
+				<li><a href="https://www.facebook.com/Al-Tir%C3%B3n-782330408445147/"><img src="img/facebook.png">Facebook</a></li>
+				<li><a href="https://twitter.com/explore"><img src="img/twitter.png">Twitter</a></li>
+				<li><a href="https://www.instagram.com/"><img src="img/instagram.png">Instagram</a></li>
+				<li><a href="https://www.youtube.com/"><img src="img/youtube.png">Youtube</a></li>
+			</ul>
+		</div>
+		
+	</footer>
         <p>Política de cookies</p>
 
 
