@@ -1,0 +1,41 @@
+#head{
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100%;
+}
+
+#conciertos{
+    margin-top: 5%; 
+}
+
+footer{
+    display: inline-flex;
+	width: 100%;
+    height: 25%;
+    margin-top: 5%;
+	box-shadow: 1px 1px 5px 1px grey;
+    border-radius:5px;
+}
+
+#contacto{
+	margin-left: 5%;
+}
+
+#contacto ul li{
+	text-decoration: none;
+	font-size: 1.5em;
+	list-style-type: none;
+
+}
+
+
+#redes ul li{
+    font-size: 1.5em;
+    list-style-type: none;
+
+}
+#redes ul li img{
+	width: 30px;
+	height: 30px;
+}
