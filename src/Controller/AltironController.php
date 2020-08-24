@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AltironController extends AbstractController
 {
     /**
-     * @Route("/altiron", name="altiron")
+     * @Route({"/", "/altiron"}, name="altiron")
      */
     public function index()
     {
