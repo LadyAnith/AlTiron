@@ -16,4 +16,14 @@ class AltironController extends AbstractController
             'controller_name' => 'AltironController',
         ]);
     }
+
+     /**
+     * @Route("/cookies", name="cookies")
+     */
+    public function cookies()
+    {
+        return $this->render('altiron/cookies.html.twig', [
+            'controller_name' => 'AltironController',
+        ]);
+    }
 }

@@ -1,3 +1,15 @@
+body{
+    background-color: black;
+    font-family: 'Finger Paint';
+    color:darkcyan;
+}
+
+
+#menu img{
+    border-radius: 50%;
+    box-shadow: 1px 1px 8px 1px darkcyan;
+}
+
 #head{
     background-image: url(../img/logo.png);
     background-repeat: no-repeat;
@@ -9,6 +21,9 @@
     margin-top: 5%; 
 }
 
+.table tbody{
+    background-image: url(../img/tabla.jpg);
+}
 
 
 
