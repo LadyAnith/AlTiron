@@ -38,7 +38,7 @@ class MensajesContacto
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=9)
+     * @ORM\Column(type="string", length=9, nullable=true)
      */
     private $telefono;
 

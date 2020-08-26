@@ -38,7 +38,7 @@ class Multimedia
     private $fecha_material;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      */
     private $fecha_creacion;
 
