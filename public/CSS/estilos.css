@@ -4,6 +4,13 @@ body{
     color:darkcyan;
 }
 
+#menu{
+    font-size: 1.3em;
+}
+
+#menu:hover ul li a{
+    color:sandybrown;
+}
 
 #menu img{
     border-radius: 50%;
@@ -22,7 +29,14 @@ body{
 }
 
 .table tbody{
-    background-image: url(../img/tabla.jpg);
+    background-image: url(../img/ladri.jpg);
+    color: black;
+    font-size: 1.5em;
+}
+
+#redes p{
+    font-size: 1.3em;
+    text-decoration: none;
 }
 
 
