@@ -11,20 +11,26 @@ use Doctrine\ORM\Mapping as ORM;
 class Visitas
 {
     /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Id 
+     * @ORM\Column(type="string", length= 16)
      */
-    private $id;
+    private $ip;
 
     /**
+     * @ORM\Id
      * @ORM\Column(type="date")
      */
     private $fecha;
 
-    public function getId(): ?int
+    public function getIp(): ?string
     {
-        return $this->id;
+        return $this->ip;
+    }
+
+    public function setIp(string $ip): self
+    {
+        $this->ip = $ip;
+        return $this;
     }
 
     public function getFecha(): ?\DateTimeInterface

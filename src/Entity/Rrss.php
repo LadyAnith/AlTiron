@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=RrssRepository::class)
  */
-class Rrss
+class Rrss extends EntityBase
 {
     /**
      * @ORM\Id
@@ -32,15 +32,6 @@ class Rrss
      */
     private $activa;
 
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $fecha_alta;
-
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $fecha_ultima_actualizacion;
 
     public function getId(): ?int
     {
@@ -83,27 +74,5 @@ class Rrss
         return $this;
     }
 
-    public function getFechaAlta(): ?\DateTimeInterface
-    {
-        return $this->fecha_alta;
-    }
-
-    public function setFechaAlta(\DateTimeInterface $fecha_alta): self
-    {
-        $this->fecha_alta = $fecha_alta;
-
-        return $this;
-    }
-
-    public function getFechaUltimaActualizacion(): ?\DateTimeInterface
-    {
-        return $this->fecha_ultima_actualizacion;
-    }
-
-    public function setFechaUltimaActualizacion(\DateTimeInterface $fecha_ultima_actualizacion): self
-    {
-        $this->fecha_ultima_actualizacion = $fecha_ultima_actualizacion;
-
-        return $this;
-    }
+   
 }

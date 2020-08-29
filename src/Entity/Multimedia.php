@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=MultimediaRepository::class)
  */
-class Multimedia
+class Multimedia extends EntityBase
 {
     /**
      * @ORM\Id
@@ -36,16 +36,6 @@ class Multimedia
      * @ORM\Column(type="date")
      */
     private $fecha_material;
-
-    /**
-     * @ORM\Column(type="date", nullable=true)
-     */
-    private $fecha_creacion;
-
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $ultima_actualizacion;
 
     public function getId(): ?int
     {
@@ -96,30 +86,6 @@ class Multimedia
     public function setFechaMaterial(\DateTimeInterface $fecha_material): self
     {
         $this->fecha_material = $fecha_material;
-
-        return $this;
-    }
-
-    public function getFechaCreacion(): ?\DateTimeInterface
-    {
-        return $this->fecha_creacion;
-    }
-
-    public function setFechaCreacion(\DateTimeInterface $fecha_creacion): self
-    {
-        $this->fecha_creacion = $fecha_creacion;
-
-        return $this;
-    }
-
-    public function getUltimaActualizacion(): ?\DateTimeInterface
-    {
-        return $this->ultima_actualizacion;
-    }
-
-    public function setUltimaActualizacion(\DateTimeInterface $ultima_actualizacion): self
-    {
-        $this->ultima_actualizacion = $ultima_actualizacion;
 
         return $this;
     }

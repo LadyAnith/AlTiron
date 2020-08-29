@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=ConfigRepository::class)
  */
-class Config
+class Config extends EntityBase
 {
     /**
      * @ORM\Id
@@ -27,10 +27,7 @@ class Config
      */
     private $valor;
 
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $fecha_ultima_actualizacion;
+    
 
     public function getId(): ?int
     {
@@ -61,15 +58,4 @@ class Config
         return $this;
     }
 
-    public function getFechaUltimaActualizacion(): ?\DateTimeInterface
-    {
-        return $this->fecha_ultima_actualizacion;
-    }
-
-    public function setFechaUltimaActualizacion(\DateTimeInterface $fecha_ultima_actualizacion): self
-    {
-        $this->fecha_ultima_actualizacion = $fecha_ultima_actualizacion;
-
-        return $this;
-    }
 }
