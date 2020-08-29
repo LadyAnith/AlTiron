@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Listado Conciertos</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    </head>
+    <style>
+        #jumbo {
+            color: thistle;
+            background-color: black;
+
+        }
+    </style>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid" id="jumbo">
+        <div class="container">
+            <h1 class="display-4">Al Tirón</h1>
+            <p class="lead">Sueños de Libertad</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mb-2" style="height:50px;">
+            <div class="col-sm-5 offset-sm-7 text-right">
+                <a class="btn btn-info" data-toggle="modal" data-target="#modalConciertos">Nuevo Concierto</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="table">
+            <thead class="table-success">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Lugar</th>
+                    <th scope="col">Coordenadas</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Webs</th>
+                    <th scope="col">Precio Visible</th>
+                    <th scope="col">Creación</th>
+                    <th scope="col">Actualización</th>
+
+                </tr>
+            </thead>
+            <tbody>
+               
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+
+                    </tr>
+
+            </tbody>
+      
+        <!-----------------------------MODAL NUEVO CONCIERTO------------------------------>
+
+        <div class="modal" tabindex="-1" role="dialog" id="modalConciertos">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Nuevo Concierto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="post">
+
+                            <div class="form-group">
+                                <label for="fecha">Fecha:</label>
+                                <input type="date" class="form-control" id="fecha" name="fecha">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lugar">Lugar:</label>
+                                <input type="text" class="form-control" id="lugar" name="lugar">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="coordenadas">Coordenadas:</label>
+                                <input type="number" class="form-control" id="coordenadas" name="coordenadas">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="hora">Hora:</label>
+                                <input type="time" class="form-control" id="hora" name="hora">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="precio">Precio:</label>
+                                <input type="number" class="form-control" id="precio" name="precio" step="0.01">
+                            </div>
+
+                             <div class="form-group">
+                                <label for="webs">Webs</label>
+                                <input type="url" class="form-control" id="webs" name="webs">
+                            </div>
+
+                             <div class="form-group">
+                                <label for="precioVisible">Precio Visible:</label><br>
+                                <input type="radio" id="si" name="precioVisible" value="si">
+                                <label for="si">Si</label><br>
+                                <input type="radio" id="no" name="precioVisible" value="no">
+                                <label for="no">No</label><br>
+                            </div>
+
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <button type="reset" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </table>
+    </div>
+
+</body>
+
+</html>

@@ -26,4 +26,14 @@ class AltironController extends AbstractController
             'controller_name' => 'AltironController',
         ]);
     }
+
+      /**
+     * @Route("/listadoGira", name="listadoGira")
+     */
+    public function listadoGira()
+    {
+        return $this->render('altiron/listadoConciertos.html.twig', [
+            'controller_name' => 'AltironController',
+        ]);
+    }
 }
