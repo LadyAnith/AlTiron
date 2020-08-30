@@ -37,10 +37,6 @@ class Gira extends EntityBase
      */
     private $coordenadas;
 
-    /**
-     * @ORM\Column(type="time")
-     */
-    private $horario;
 
     /**
      * @ORM\Column(type="float")
@@ -111,17 +107,6 @@ class Gira extends EntityBase
         return $this;
     }
 
-    public function getHorario(): ?\DateTimeInterface
-    {
-        return $this->horario;
-    }
-
-    public function setHorario(\DateTimeInterface $horario): self
-    {
-        $this->horario = $horario;
-
-        return $this;
-    }
 
     public function getPrecio(): ?float
     {
