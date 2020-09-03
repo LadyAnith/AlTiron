@@ -60,22 +60,20 @@
                 </tr>
             </thead>
             <tbody>
-               
+                   {% for concierto in conciertos %}
                     <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-
-
+                        <th scope="row">{{ concierto.id}}</th>
+                        <td>{{ concierto.fecha|date("m/d/Y") }}</td>
+                        <td>{{ concierto.nombre}}</td>
+                        <td>{{ concierto.lugar}}</td>
+                        <td>{{ concierto.coordenadas}}</td>
+                        <td>{{ concierto.precio}}</td>
+                        <td>{{ concierto.webs}}</td>
+                        <td>{{ concierto.precioVisible}}</td>
+                        <td>{{ concierto.createdAt|date("m/d/Y")}}</td>
+                        <td>{{ concierto.updatedAt|date("m/d/Y")}}</td>
                     </tr>
+                    {% endfor %}
 
             </tbody>
       

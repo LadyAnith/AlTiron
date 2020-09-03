@@ -26,7 +26,7 @@ class ConciertosController extends AbstractController
         $giraRepo = $this->getDoctrine()->getRepository(Gira::class);
 
         $conciertos = $giraRepo->findAll();
-       
+    
     
 
         return $this->render('conciertos/index.html.twig', [
