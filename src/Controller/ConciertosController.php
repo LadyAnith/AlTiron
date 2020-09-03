@@ -10,6 +10,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 
+
 class ConciertosController extends AbstractController
 {
     /**
@@ -21,11 +22,16 @@ class ConciertosController extends AbstractController
             //OBTENER listado conciertos 
 
             //volcar el listado en el render:
+        $entityManager = $this->getDoctrine()->getManager();
+        $giraRepo = $this->getDoctrine()->getRepository(Gira::class);
 
-
+        $conciertos = $giraRepo->findAll();
+       
+    
 
         return $this->render('conciertos/index.html.twig', [
             'controller_name' => 'ConciertosController',
+            'conciertos'=>$conciertos,
             //AQUI se meteria la variable del listado mira lo que tienes con martin
         ]);
     }

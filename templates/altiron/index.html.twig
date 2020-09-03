@@ -2,7 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
         <title>Al Tiron</title>
+        <!--Responsive-->
+
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
         <!-- Estilos -->
         <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -22,6 +27,8 @@
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
         <link rel="manifest" href="img/site.webmanifest">
+
+        
     </head>
     <body>
        
@@ -127,59 +134,60 @@
         <a name="gira"></a>
         <h2>Conciertos:</h2>
         <hr/>
+            <div class="table-responsive-sm">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Sala</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Hora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">18/08/2020</th>
+                            <td>Detonante</td>
+                            <td>Santa Maria de benquerencia (Toledo)</td>
+                            <td>9:00</td>
+                        </tr>
+                        
+                        <tr>
+                            <th scope="row">18/08/2020</th>
+                            <td>Detonante</td>
+                            <td>Santa Maria de benquerencia (Toledo)</td>
+                            <td>9:00</td>
+                        </tr>
 
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Sala</th>
-                    <th scope="col">Ciudad</th>
-                    <th scope="col">Hora</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">18/08/2020</th>
-                        <td>Detonante</td>
-                        <td>Santa Maria de benquerencia (Toledo)</td>
-                        <td>9:00</td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row">18/08/2020</th>
-                        <td>Detonante</td>
-                        <td>Santa Maria de benquerencia (Toledo)</td>
-                        <td>9:00</td>
-                    </tr>
+                        <tr>
+                            <th scope="row">18/08/2020</th>
+                            <td>Detonante</td>
+                            <td>Santa Maria de benquerencia (Toledo)</td>
+                            <td>9:00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">18/08/2020</th>
+                            <td>Detonante</td>
+                            <td>Santa Maria de benquerencia (Toledo)</td>
+                            <td>9:00</td>
+                        </tr>
+                        
+                        <tr>
+                            <th scope="row">18/08/2020</th>
+                            <td>Detonante</td>
+                            <td>Santa Maria de benquerencia (Toledo)</td>
+                            <td>9:00</td>
+                        </tr>
 
-                    <tr>
-                        <th scope="row">18/08/2020</th>
-                        <td>Detonante</td>
-                        <td>Santa Maria de benquerencia (Toledo)</td>
-                        <td>9:00</td>
-                    </tr>
-                      <tr>
-                        <th scope="row">18/08/2020</th>
-                        <td>Detonante</td>
-                        <td>Santa Maria de benquerencia (Toledo)</td>
-                        <td>9:00</td>
-                    </tr>
-                    
-                    <tr>
-                        <th scope="row">18/08/2020</th>
-                        <td>Detonante</td>
-                        <td>Santa Maria de benquerencia (Toledo)</td>
-                        <td>9:00</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="row">18/08/2020</th>
-                        <td>Detonante</td>
-                        <td>Santa Maria de benquerencia (Toledo)</td>
-                        <td>9:00</td>
-                    </tr>
-                </tbody>
-            </table>
+                        <tr>
+                            <th scope="row">18/08/2020</th>
+                            <td>Detonante</td>
+                            <td>Santa Maria de benquerencia (Toledo)</td>
+                            <td>9:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <!--CONTACTO-->
@@ -192,7 +200,7 @@
         
        
 		<div class="row">
-			<div class="col-sm-4 offset-sm-1" id="redes">
+			<div class="col-sm-4 offset-sm-1 d-none d-md-block" id="redes">
                 <h4>Contrataciones</h4>
                 <br/>
 				<p><i class="fab fa-whatsapp"></i> Teléfono: 617 049 522</p>
@@ -205,7 +213,46 @@
                 <a href="https://www.instagram.com/altiron_oficial/"><p><i class="fab fa-instagram"></i> Instagram</p></a>
                 <a href="https://www.youtube.com/channel/UCH-bQp5x8pF8Q0ZKwIbYFWQ"><p><i class="fab fa-youtube-square"></i> Youtube</p></a>
 			</div>
-			<div class="col-sm-4 offset-sm-2" id="comentarios">
+			<div class="col-sm-4 offset-sm-2 d-none d-md-block" id="comentarios">
+				<form>
+                    <h4>Mándanos un mensaje</h4>
+                    <br/>
+					<label for="nombre">Nombre *</label>
+					<input type="text" id="nombre" name="nombre" class="form-control" required>
+					<label for="email">E-mail *</label>
+					<input type="text" id="email" name="email" class="form-control" required>
+                    <label for="asunto">Asunto</label>
+					<input type="text" id="asunto" name="asunto" class="form-control">
+					<label for="comentario">Mensaje </label>
+					<textarea type="text" id="comentario" name="comentario" class="form-control" rows="5"></textarea>
+					<br/>
+					<button type="submit" class="btn btn-primary">Enviar</button>
+					<button type="reset" class="btn btn-secondary">Cancelar</button>
+				</form>
+			</div>
+		</div>
+
+      <!--CONTACTO RESPONSIVE-->
+        <div class="row">
+			<div class="mov d-block d-md-none text-center" id="redes2">
+                <h4>Contrataciones</h4>
+                <br/>
+				<a href="https://wa.me/34617049522?text=Estaba%20interesad@%20en%20contactar%20con%20la%20Banda"><img src="img/what.png"></a>
+                <a href="mailto:altironrock@hotmail.com?cc=copia@destinatario.com&subject=Contratar%20un%20al%20grupo%20Al%20Tiron&body=Me%20gustaría%20contratar%20a%20la%20banda%20para%20un%20concierto%20en%20[ciudad_aqui]"><img src="img/google.png"></a>
+                <br/>
+                <h4>En Las Redes</h4>
+                <br/>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="https://www.facebook.com/Al-Tir%C3%B3n-782330408445147/about/?ref=page_internal"><img src="img/facebook.png"></a>
+                        <a href="https://twitter.com/altiron_"><img src="img/twitter.png"></a>
+                    </div>
+                    <div class="col-12">
+                        <a href="https://www.instagram.com/altiron_oficial/"><img src="img/orkut.png"></a>
+                        <a href="https://www.youtube.com/channel/UCH-bQp5x8pF8Q0ZKwIbYFWQ"><img src="img/youtube.png"></a>
+                    </div>
+			</div>
+			<div class="col-12 col-md-8 text-left" id="comentarios2">
 				<form>
                     <h4>Mándanos un mensaje</h4>
                     <br/>
@@ -225,8 +272,8 @@
 		</div>
 		
 	   <!--COOKIES-->
-
-        <p id="cookies">Política de cookies</p>
+        <a href="/cookies" id="cookies"><p>Política de cookies</p></a>
+        
 
 
     </body>
