@@ -57,8 +57,11 @@ class ConciertosController extends AbstractController
             //Setear fechas de creacion y update
             ->updatedTimestamps();
 */
-    
-        $gira->setFecha(new DateTime($request->request->get('fecha')))
+        $fecha_concierto = $request->request->get('fecha');
+        $hora_concierto = $request->request->get('hora');
+        $datetime_concierto = $fecha_concierto . ' ' . $hora_concierto;
+
+        $gira->setFecha(new DateTime($datetime_concierto))
             ->setNombre($request->request->get('nombre'))
             ->setLugar($request->request->get('lugar'))
             ->setCoordenadas($request->request->get('coordenadas'))

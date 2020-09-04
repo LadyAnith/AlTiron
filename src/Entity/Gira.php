@@ -18,7 +18,7 @@ class Gira extends EntityBase
     private $id;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $fecha;
 
