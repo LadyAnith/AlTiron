@@ -31,8 +31,11 @@ class ConciertosController extends AbstractController
 
         return $this->render('conciertos/index.html.twig', [
             'controller_name' => 'ConciertosController',
+              //AQUI se meteria la variable del listado 
             'conciertos'=>$conciertos,
-            //AQUI se meteria la variable del listado mira lo que tienes con martin
+            
+            
+          
         ]);
     }
 
@@ -78,5 +81,31 @@ class ConciertosController extends AbstractController
         $entityManager->flush();
 
         return new Response('Saved new concert with id '.$gira->getId());
+    }
+
+    /**
+     * @Route("/bajaConcierto/{id}", name="delete_concert")
+     */
+    public function bajaConcierto($id)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $giraRepo = $this->getDoctrine()->getRepository(Gira::class);
+
+        $concierto = $giraRepo->find($id);
+
+        $entityManager->remove($concierto);
+        $entityManager->flush();
+
+        $conciertos = $giraRepo->findAll();
+        
+         return $this->render('conciertos/index.html.twig', [
+            'controller_name' => 'ConciertosController',
+              //AQUI se meteria la variable del listado 
+            'conciertos'=>$conciertos,
+            'bajaConcierto',
+            
+            
+          
+        ]);
     }
 }
