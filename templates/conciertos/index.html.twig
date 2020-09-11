@@ -168,7 +168,7 @@
                         <td>{{ concierto.updatedAt|date("m/d/Y")}}</td>
                         <td>
                             <button type="button" class="btn btn-outline-danger" ><a href="/bajaConcierto/{{ concierto.id}}"><i class="fas fa-eraser"></i></a></button>
-			                <button type="button" class="btn btn-outline-primary"><a href="/editarConcierto/{{ concierto.id}}"><i class="fas fa-pencil-alt"></i></a></button>
+                            <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#modificarConcierto"><a href="/editarConcierto/{{concierto.id}}"><i class="fas fa-pencil-alt"></i></a></button>
                         </td>
 
                     </tr>
@@ -246,9 +246,9 @@
             </div>
 
 
-{% if actualizado is defined %} 
-    <!-----------------------------MODIFICAR  CONCIERTO------------------------------>
 
+    <!-----------------------------MODIFICAR  CONCIERTO------------------------------>
+    {% if concierto is defined %} 
         <div class="modal" tabindex="-1" role="dialog" id="modificarConcierto">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -259,7 +259,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="altaConcierto" method="post">
+                        <form action="/editarConcierto/{{concierto.id}}" method="post">
 
                             <div class="form-group">
                                 <label for="fecha">Fecha:</label>
@@ -317,6 +317,10 @@
                     </div>
                 </div>
             </div>
+        </div>
+            <script type="text/javaScript">
+                $('#modificarConcierto').modal('show');
+            </script>
 {% endif %}
 </body>
 

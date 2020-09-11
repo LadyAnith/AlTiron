@@ -109,7 +109,7 @@ class ConciertosController extends AbstractController
     public function editarConcierto($id)
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $giraRepo = $entityManager->getRepository(Gira::class);
+        $giraRepo = $this->getDoctrine()->getRepository(Gira::class);
 
         //Obtener los datos del concierto que queremos actualizar
         $concierto =  $giraRepo->find($id);
@@ -119,7 +119,7 @@ class ConciertosController extends AbstractController
                 'No existe concierto con id: '.$id
             );
         }
-       
+        
         $conciertos = $giraRepo->findAll();
         return $this->render('conciertos/index.html.twig', [
             'controller_name' => 'ConciertosController',
@@ -127,7 +127,7 @@ class ConciertosController extends AbstractController
             'conciertos'=>$conciertos, 
             //Este es el concierto que vas a actualizar
             'concierto'=>$concierto, 
-            'actualizado'=> true,
+            
  
         ]);
     }
@@ -138,7 +138,9 @@ class ConciertosController extends AbstractController
     public function editarConcierto2(Request $request, $id):Response
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $giraRepo = $entityManager->getRepository(Gira::class)->find($id);
+        $giraRepo = $entityManager->getRepository(Gira::class);
+
+        $concierto = $giraRepo->find($id);
 
         if (!$giraRepo) {
             throw $this->createNotFoundException(
@@ -149,7 +151,7 @@ class ConciertosController extends AbstractController
         $hora_concierto = $request->request->get('hora');
         $datetime_concierto = $fecha_concierto . ' ' . $hora_concierto;
 
-        $giraRepo->setFecha(new DateTime($datetime_concierto))
+        $concierto->setFecha(new DateTime($datetime_concierto))
             ->setNombre($request->request->get('nombre'))
             ->setLugar($request->request->get('lugar'))
             ->setCoordenadas($request->request->get('coordenadas'))
