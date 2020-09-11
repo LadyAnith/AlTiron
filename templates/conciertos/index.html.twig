@@ -17,6 +17,12 @@
         <script type="text/javascript">
                 
                 $(document).ready( function () {
+
+                    {% if actualizado is defined %}
+                        $('#modificarConcierto').modal('show');
+                    {% endif %}
+
+
                     $.ajax({
                         url: "http://cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json"
                     }).done(function(data){
@@ -114,6 +120,7 @@
     </div>
 
     <div class="container">
+    
         <div class="row mb-2" style="height:50px;">
             <div class="col-sm-5 offset-sm-7 text-right">
                 <a class="btn btn-info" data-toggle="modal" data-target="#modalConciertos">Nuevo Concierto</a>
@@ -160,15 +167,16 @@
                         <td>{{ concierto.createdAt|date("m/d/Y")}}</td>
                         <td>{{ concierto.updatedAt|date("m/d/Y")}}</td>
                         <td>
-                            <button type="button" class="btn btn-outline-danger" ><a href="bajaConcierto/{{ concierto.id}}"><i class="fas fa-eraser"></i></a></button>
-			                <button type="button" class="btn btn-outline-primary"><a href="#"><i class="fas fa-pencil-alt"></i></a></button>
+                            <button type="button" class="btn btn-outline-danger" ><a href="/bajaConcierto/{{ concierto.id}}"><i class="fas fa-eraser"></i></a></button>
+			                <button type="button" class="btn btn-outline-primary"><a href="/editarConcierto/{{ concierto.id}}"><i class="fas fa-pencil-alt"></i></a></button>
                         </td>
 
                     </tr>
                     {% endfor %}
 
             </tbody>
-      
+      </table>
+    </div>
         <!-----------------------------MODAL NUEVO CONCIERTO------------------------------>
 
         <div class="modal" tabindex="-1" role="dialog" id="modalConciertos">
@@ -206,7 +214,7 @@
 
                             <div class="form-group">
                                 <label for="coordenadas">Coordenadas:</label>
-                                <input type="number" class="form-control" id="coordenadas" name="coordenadas">
+                                <input type="text" class="form-control" id="coordenadas" name="coordenadas">
                             </div>
 
                             <div class="form-group">
@@ -221,7 +229,7 @@
 
                              <div class="form-group">
                                 <label for="precioVisible">Precio Visible:</label><br>
-                                <input type="radio" id="si" name="precioVisible" value="1">
+                                <input type="radio" id="si" name="precioVisible" value="1" checked>
                                 <label for="si">Si</label><br>
                                 <input type="radio" id="no" name="precioVisible" value="0">
                                 <label for="no">No</label><br>
@@ -236,9 +244,80 @@
                     </div>
                 </div>
             </div>
-        </table>
-    </div>
 
+
+{% if actualizado is defined %} 
+    <!-----------------------------MODIFICAR  CONCIERTO------------------------------>
+
+        <div class="modal" tabindex="-1" role="dialog" id="modificarConcierto">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Editando: {{concierto.nombre}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="altaConcierto" method="post">
+
+                            <div class="form-group">
+                                <label for="fecha">Fecha:</label>
+                                <input type="date" class="form-control" id="fecha" name="fecha" value="{{concierto.fecha|date("Y-m-d")}}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="hora">Hora:</label>
+                                <input type="time" class="form-control" id="hora" name="hora" value="{{concierto.fecha|date( "H:i:s")}}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" value="{{concierto.nombre}}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lugar">Lugar:</label>
+                                <input type="text" class="form-control" id="lugar" name="lugar" value="{{concierto.lugar}}">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="coordenadas">Coordenadas:</label>
+                                <input type="text" class="form-control" id="coordenadas" name="coordenadas" value="{{concierto.coordenadas}}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="precio">Precio:</label>
+                                <input type="number" class="form-control" id="precio" name="precio" step="0.01" value="{{concierto.precio}}">
+                            </div>
+
+                             <div class="form-group">
+                                <label for="webs">Webs</label>
+                                <input type="url" class="form-control" id="webs" name="webs" value="{{concierto.webs}}">
+                            </div>
+
+                             <div class="form-group">
+                                <label for="precioVisible">Precio Visible:</label><br>
+                                <input type="radio" id="si" name="precioVisible" value="1"
+                                {% if concierto.precioVisible == 1 %} checked {% endif %}
+                                >
+                                <label for="si">Si</label><br>
+                                <input type="radio" id="no" name="precioVisible" value="0"
+                                 {% if concierto.precioVisible == 0 %} checked {% endif %}>
+                                <label for="no">No</label><br> 
+                            </div>
+
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <button type="reset" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+{% endif %}
 </body>
 
 </html>

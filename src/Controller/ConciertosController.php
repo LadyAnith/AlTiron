@@ -80,7 +80,7 @@ class ConciertosController extends AbstractController
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
-        return new Response('Saved new concert with id '.$gira->getId());
+        return $this->redirectToRoute('conciertos');
     }
 
     /**
@@ -98,14 +98,68 @@ class ConciertosController extends AbstractController
 
         $conciertos = $giraRepo->findAll();
         
-         return $this->render('conciertos/index.html.twig', [
+        return $this->redirectToRoute('conciertos');
+        
+    }
+
+
+    /**
+     * @Route("/editarConcierto/{id}", name="update_concert", methods={"GET"})
+     */
+    public function editarConcierto($id)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $giraRepo = $entityManager->getRepository(Gira::class);
+
+        //Obtener los datos del concierto que queremos actualizar
+        $concierto =  $giraRepo->find($id);
+
+        if (!$concierto) {
+            throw $this->createNotFoundException(
+                'No existe concierto con id: '.$id
+            );
+        }
+       
+        $conciertos = $giraRepo->findAll();
+        return $this->render('conciertos/index.html.twig', [
             'controller_name' => 'ConciertosController',
-              //AQUI se meteria la variable del listado 
-            'conciertos'=>$conciertos,
-            'bajaConcierto',
-            
-            
-          
+              //Estos son los conciertos del listado
+            'conciertos'=>$conciertos, 
+            //Este es el concierto que vas a actualizar
+            'concierto'=>$concierto, 
+            'actualizado'=> true,
+ 
         ]);
+    }
+
+    /**
+     * @Route("/editarConcierto/{id}", name="update_concert2", methods={"POST"})
+     */
+    public function editarConcierto2(Request $request, $id):Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $giraRepo = $entityManager->getRepository(Gira::class)->find($id);
+
+        if (!$giraRepo) {
+            throw $this->createNotFoundException(
+                'No existe concierto con id: '.$id
+            );
+        }
+        $fecha_concierto = $request->request->get('fecha');
+        $hora_concierto = $request->request->get('hora');
+        $datetime_concierto = $fecha_concierto . ' ' . $hora_concierto;
+
+        $giraRepo->setFecha(new DateTime($datetime_concierto))
+            ->setNombre($request->request->get('nombre'))
+            ->setLugar($request->request->get('lugar'))
+            ->setCoordenadas($request->request->get('coordenadas'))
+            ->setPrecio($request->request->get('precio'))
+            ->setWebs($request->request->get('webs'))
+            ->setPrecioVisible($request->request->get('precioVisible'))
+            ->updatedTimestamps();
+            
+        $entityManager->flush();
+
+        return $this->redirectToRoute('conciertos');
     }
 }
