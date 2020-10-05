@@ -137,6 +137,9 @@ class ConciertosController extends AbstractController
      */
     public function editarConcierto2(Request $request, $id):Response
     {
+
+        //TODO mirar por que no actualiza la hora
+        
         $entityManager = $this->getDoctrine()->getManager();
         $giraRepo = $entityManager->getRepository(Gira::class);
 
