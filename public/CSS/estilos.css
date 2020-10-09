@@ -24,6 +24,22 @@ body{
     height: 100%;
 }
 
+#biografia{
+    background-image: url(../img/atv-rel.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height:100%;
+    margin-top: 5%;
+}
+
+#biografiaTexto{
+    background: rgba(0, 0, 0, 0.8);
+    padding:2%;
+    margin:2%;
+    border-radius: 2%;
+    
+}
+
 #conciertos{
     margin-top: 5%; 
 }
@@ -64,6 +80,10 @@ body{
 
 #cookies:hover{
     color:sandybrown;
+}
+
+#comentarios{
+    
 }
 
 
