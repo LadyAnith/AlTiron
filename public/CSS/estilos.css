@@ -30,6 +30,12 @@ body{
     background-repeat: no-repeat;
     height:100%;
     margin-top: 5%;
+    border-radius: 2%;
+    transform: rotate(358deg) scale(1) skew(1deg) translate(0px);
+    -webkit-transform: rotate(357deg) scale(1) skew(1deg) translate(0px);
+    -moz-transform: rotate(357deg) scale(1) skew(1deg) translate(0px);
+    -o-transform: rotate(357deg) scale(1) skew(1deg) translate(0px);
+    -ms-transform: rotate(357deg) scale(1) skew(1deg) translate(0px);
 }
 
 #biografiaTexto{
@@ -37,6 +43,7 @@ body{
     padding:2%;
     margin:2%;
     border-radius: 2%;
+    margin-top: 27%;
     
 }
 
