@@ -1,12 +1,11 @@
 <!DOCTYPE>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
         <title>Al Tiron</title>
-        <!--Responsive-->
+        <meta charset="UTF-8">
 
-         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--Responsive-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Estilos -->
         <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
@@ -140,46 +139,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                    {% for concierto in conciertos %}
                         <tr>
-                            <th scope="row">18/08/2020</th>
-                            <td>Detonante</td>
-                            <td>Santa Maria de benquerencia (Toledo)</td>
-                            <td>9:00</td>
+                            <th scope="row">{{ concierto.fecha|date("m/d/Y") }}</th>
+                            <td>{{ concierto.nombre}}</td>
+                            <td>{{ concierto.lugar}}</td>
+                            <td>{{ concierto.fecha|date("H:i") }}</td>
                         </tr>
-                        
-                        <tr>
-                            <th scope="row">18/08/2020</th>
-                            <td>Detonante</td>
-                            <td>Santa Maria de benquerencia (Toledo)</td>
-                            <td>9:00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">18/08/2020</th>
-                            <td>Detonante</td>
-                            <td>Santa Maria de benquerencia (Toledo)</td>
-                            <td>9:00</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">18/08/2020</th>
-                            <td>Detonante</td>
-                            <td>Santa Maria de benquerencia (Toledo)</td>
-                            <td>9:00</td>
-                        </tr>
-                        
-                        <tr>
-                            <th scope="row">18/08/2020</th>
-                            <td>Detonante</td>
-                            <td>Santa Maria de benquerencia (Toledo)</td>
-                            <td>9:00</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">18/08/2020</th>
-                            <td>Detonante</td>
-                            <td>Santa Maria de benquerencia (Toledo)</td>
-                            <td>9:00</td>
-                        </tr>
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>

@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Gira;
+
 
 class AltironController extends AbstractController
 {
@@ -12,8 +14,12 @@ class AltironController extends AbstractController
      */
     public function index()
     {
+        $giraRepo = $this->getDoctrine()->getRepository(Gira::class);
+
+        $conciertos = $giraRepo->findAll();
+
         return $this->render('altiron/index.html.twig', [
-            'controller_name' => 'AltironController',
+            'conciertos'=>$conciertos,
         ]);
     }
 
@@ -23,7 +29,6 @@ class AltironController extends AbstractController
     public function cookies()
     {
         return $this->render('altiron/cookies.html.twig', [
-            'controller_name' => 'AltironController',
         ]);
     }
 
@@ -33,7 +38,6 @@ class AltironController extends AbstractController
     public function listadoGira()
     {
         return $this->render('altiron/listadoConciertos.html.twig', [
-            'controller_name' => 'AltironController',
         ]);
     }
 }
